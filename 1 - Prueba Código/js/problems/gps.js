@@ -61,6 +61,7 @@ export default function navigate(numberOfIntersections, roads, start, finish) {
 
 	let routes = [[0, start]];
 	const isRouteFinished = (route) => route[route.length - 1] === finish || route.length === numberOfIntersections + 1;// +1 porque el sumatorio del tiempo está en la posicion 0
+	
 	while (!routes.every(isRouteFinished)) {
 		routes = evaluate(routes);
 	}
